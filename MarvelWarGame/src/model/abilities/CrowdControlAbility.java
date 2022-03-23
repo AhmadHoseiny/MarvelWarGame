@@ -1,5 +1,5 @@
 package model.abilities;
-import model.effects;
+import model.effects.Effect;
 public class CrowdControlAbility extends Ability{
 
 	Effect effect;

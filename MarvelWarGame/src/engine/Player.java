@@ -1,6 +1,6 @@
 package engine;
 import java.util.*;
-import model.world;
+import model.world.Champion;
 public class Player {
 
 	String name;
