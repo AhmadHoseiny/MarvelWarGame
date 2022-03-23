@@ -4,8 +4,8 @@ public class CrowdControlAbility extends Ability{
 
 	Effect effect;
 	
-	public CrowdControlAbility(String name,int manaCost,int baseCooldown,int currentCooldown,int castRange,int requiredActionPoints,AreaOfEffect castArea,Effect effect) {
-		super(name,manaCost,baseCooldown,currentCooldown,castRange,requiredActionPoints,castArea,effect);
+	public CrowdControlAbility(String name,int cost,int baseCooldown,int castRange,AreaOfEffect area,int required,Effect effect) {
+		super(name,cost,baseCooldown,castRange,area,required);
 		this.effect = effect;
 	}
 
