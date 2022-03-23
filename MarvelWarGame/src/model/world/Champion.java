@@ -1,8 +1,8 @@
 package model.world;
 import java.util.ArrayList ;
 import java.awt.Point; 
-import model.abilities ;
-import model.effects ;
+import model.abilities.Ability ;
+import model.effects.Effect ;
 public class Champion {
 	private String name ;
 	private int maxHP ;
