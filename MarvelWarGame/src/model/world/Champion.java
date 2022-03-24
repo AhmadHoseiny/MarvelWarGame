@@ -88,6 +88,12 @@ public class Champion {
 	public int getMana() {
 		return mana;
 	}
+	public void setCurrentActionPoints(int currentActionPoints) {
+		this.currentActionPoints = currentActionPoints;
+	}
+	public void setMana(int mana) {
+		this.mana = mana;
+	}
 	public int getCurrentActionPoints() {
 		return currentActionPoints;
 	}
