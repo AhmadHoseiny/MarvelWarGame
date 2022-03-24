@@ -1,8 +1,8 @@
 package model.world;
 import java.util.ArrayList ;
 import java.awt.Point; 
-import model.abilities.Ability ;
-import model.effects.Effect ;
+import model.abilities.* ;
+import model.effects.* ;
 public class Champion {
 	private String name ;
 	private int maxHP ;
@@ -27,6 +27,20 @@ public class Champion {
 		this.attackRange = attackRange ;
 		this.attackDamage = attackDamage ;
 		this.condition = Condition.ACTIVE ;
+	}
+	public Champion (String name, int maxHP, int mana, int maxActions, int speed,
+			int attackRange,int attackDamage , Ability a1 , Ability a2 , Ability a3 ){
+		this.name = name ; 
+		this.maxHP = maxHP ;
+		this.mana = mana ;
+		this.maxActionPointsPerTurn = maxActions ;
+		this.speed = speed ;
+		this.attackRange = attackRange ;
+		this.attackDamage = attackDamage ;
+		this.condition = Condition.ACTIVE ;
+		this.abilities.add(a1);
+		this.abilities.add(a2);
+		this.abilities.add(a3);
 	}
 	
 	public int getCurrentHP() {
