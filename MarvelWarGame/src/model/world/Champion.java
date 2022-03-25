@@ -17,6 +17,7 @@ public class Champion {
 	private ArrayList<Effect> appliedEffects ;
 	private Condition condition ;
 	private Point location ;
+	
 	public Champion (String name, int maxHP, int mana, int maxActions, int speed,
 			int attackRange,int attackDamage){
 		this.name = name ; 

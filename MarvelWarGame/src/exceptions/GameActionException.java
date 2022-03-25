@@ -6,8 +6,8 @@ public class GameActionException extends Exception{
 	public GameActionException() {
 		super();
 	}
-	public GameActionException(String s){
-		super(s);
+	public GameActionException(String message){
+		super(message);
 		
 	}
 }

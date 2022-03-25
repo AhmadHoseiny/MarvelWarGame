@@ -2,7 +2,7 @@ package model.abilities;
 import model.effects.Effect;
 public class CrowdControlAbility extends Ability{
 
-	Effect effect;
+	private Effect effect;
 	
 	public CrowdControlAbility(String name,int cost,int baseCooldown,int castRange,AreaOfEffect area,int required,Effect effect) {
 		super(name,cost,baseCooldown,castRange,area,required);

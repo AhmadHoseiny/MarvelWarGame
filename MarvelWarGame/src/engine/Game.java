@@ -15,8 +15,8 @@ public class Game {
 	private static ArrayList<Champion> availableChampions = new ArrayList<Champion>()  ;
 	private static ArrayList<Ability> availableAbilities = new ArrayList<Ability>() ;
 	private PriorityQueue turnOrder ;
-	private static int boardWidth =5 ;
-	private static int boardHeight =5;
+	private final static int boardWidth =5 ;
+	private final static int boardHeight =5;
 	
 	public Player getFirstPlayer() {
 		return firstPlayer;
@@ -65,15 +65,18 @@ public class Game {
 		}
 	}
 	private void placeCovers(){
-		int i=0 ;
-		int j=0;
-		Point p = new Point(i,j) ;
 		HashSet<Point> previous = new HashSet<Point> ();
-		previous.add(p) ;
 		for(int k=0 ; k<5 ; k++){
-			while(  previous.contains(p) ) {
-				 i = (int)( Math.random() *5  )  ;
+			int i=0;
+			int j=0;
+			boolean flag = true ;
+			while(flag) {
+				 i = (int)( Math.random() *(4-1) +1  )  ;
 				 j = (int)( Math.random() *5  )  ;
+				 Point cur = new Point(i,j) ;
+				 if(!previous.contains(cur)){
+					 flag = false ;
+				 }
 			}
 			Point x = new Point(i,j) ;
 			previous.add(x) ;
