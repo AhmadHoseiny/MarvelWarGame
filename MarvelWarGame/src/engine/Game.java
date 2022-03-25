@@ -15,8 +15,8 @@ public class Game {
 	private static ArrayList<Champion> availableChampions = new ArrayList<Champion>()  ;
 	private static ArrayList<Ability> availableAbilities = new ArrayList<Ability>() ;
 	private PriorityQueue turnOrder ;
-	private final static int boardWidth =5 ;
-	private final static int boardHeight =5;
+	private final static int BOARDWIDTH =5 ;
+	private final static int BOARDHEIGHT =5;
 	
 	public Player getFirstPlayer() {
 		return firstPlayer;
@@ -32,6 +32,7 @@ public class Game {
 	}
 	public Object[][] getBoard() {
 		return board;
+		
 	}
 	public static ArrayList<Champion> getAvailableChampions() {
 		return availableChampions;
@@ -43,15 +44,15 @@ public class Game {
 		return turnOrder;
 	}
 	public static int getBoardWidth() {
-		return boardWidth;
+		return BOARDWIDTH;
 	}
 	public static int getBoardHeight() {
-		return boardHeight;
+		return BOARDHEIGHT;
 	}
 	public Game(Player first , Player second){
 		this.firstPlayer = first ;
 		this.secondPlayer = second ;
-		board = new Object [boardHeight][boardWidth] ;
+		board = new Object [BOARDHEIGHT][BOARDWIDTH] ;
 	}
 	
 	private void placeChampions(){

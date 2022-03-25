@@ -4,7 +4,7 @@ public class AbilityUseException extends GameActionException {
 	public AbilityUseException(){
 		super() ;
 	}
-	public AbilityUseException(String message){
-		super(message) ;
+	public AbilityUseException(String s){
+		super(s) ;
 	}
 }
