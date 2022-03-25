@@ -50,5 +50,16 @@ public class Ability {
 	public AreaOfEffect getCastArea() {
 		return castArea;
 	}
+	public String toString() {
+		return "NAME: "+name+'\n'+"MANA COST: "+manaCost+'\n'+
+				"BASE COOLDOWN: "+baseCooldown+'\n'+
+				"CURRENT COOLDOWN: "+currentCooldown+'\n'+
+				"CAST RANGE: "+castRange+'\n'+
+				"REQUIRED ACTION POINTS: "+requiredActionPoints+'\n'+
+				"AREA OF EFFECT: "+castArea;
+				
+				
+				
+	}
 	
 }

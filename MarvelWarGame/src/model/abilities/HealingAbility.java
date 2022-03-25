@@ -16,5 +16,8 @@ public int getHealAmount() {
 public void setHealAmount(int healAmount) {
 		this.healAmount = healAmount;
 	}
-	
+	public String toString() {
+		return super.toString()+'\n'+"HEAL AMOUNT: "+healAmount+'\n'+
+				"________________________"+'\n';
+	}
 }

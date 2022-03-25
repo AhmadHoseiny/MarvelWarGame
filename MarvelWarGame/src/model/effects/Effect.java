@@ -27,7 +27,10 @@ public EffectType getType() {
 	return type;
 }
 
-
+public String toString() {
+	return "NAME OF EFFECT: "+name+'\n'+"  EFFECT DURATION :"+duration+'\n'+
+			"  EFFECT TYPE: "+type;
+}
    
    
    

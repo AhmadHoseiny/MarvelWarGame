@@ -86,7 +86,29 @@ public class Champion {
 	public ArrayList<Effect> getAppliedEffects() {
 		return appliedEffects;
 	}
-	
-	
+	public String printAbilities(ArrayList<Ability>a) {
+		String res = "";
+		for(int i = 0;i<abilities.size();i++)
+			res += abilities.get(i)+" ";
+		return res;
+	}
+	public String printEffects(ArrayList<Effect>a) {
+		String res = "";
+		for(int i = 0;i<abilities.size();i++)
+			res += abilities.get(i)+" ";
+		return res;
+	}
+	public String toString() {
+		return "NAME: "+name+'\n'+"MAX HP: "+maxHP+'\n'+"CURRENT HP: "+currentHP+
+				'\n'+ "MANA: "+mana+'\n'+"Max Action Points Per Turn: "+
+				maxActionPointsPerTurn+'\n'+"Current Action Points: "+
+				currentActionPoints+'\n'+"Attack Range: "+attackRange+'\n'+
+				"Attack Damage: "+attackDamage+'\n'+"SPEED: "+speed+'\n'+
+				"Abilities :"+printAbilities(abilities)+'\n'+
+				"EFFECTS: "+printEffects(appliedEffects)+'\n'+
+				"CONDITION: "+condition+'\n'+
+				"LOCATION: "+location+'\n'+"___________________________"+'\n';
+				
+	}
 	
 }
