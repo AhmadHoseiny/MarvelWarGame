@@ -43,26 +43,29 @@ public class Game {
 	public PriorityQueue getTurnOrder() {
 		return turnOrder;
 	}
-	public static int getBoardWidth() {
+	
+	public static int getBoardwidth() {
 		return BOARDWIDTH;
 	}
-	public static int getBoardHeight() {
+	public static int getBoardheight() {
 		return BOARDHEIGHT;
 	}
 	public Game(Player first , Player second){
 		this.firstPlayer = first ;
 		this.secondPlayer = second ;
 		board = new Object [BOARDHEIGHT][BOARDWIDTH] ;
+		//placeCovers() ;
+		//placeChampions() ;
 	}
 	
 	private void placeChampions(){
 		ArrayList<Champion> teamOfP1 = firstPlayer.getTeam() ;
 		ArrayList<Champion> teamOfP2 = secondPlayer.getTeam() ;
 		for(int i=0 ; i<teamOfP1.size() ; i++){
-			board[4][i+1] = teamOfP1.get(i) ;
+			board[0][i+1] = teamOfP1.get(i) ;
 		}
 		for(int i=0 ; i<teamOfP2.size() ; i++){
-			board[0][i+1] = teamOfP2.get(i) ;
+			board[4][i+1] = teamOfP2.get(i) ;
 		}
 	}
 	private void placeCovers(){

@@ -1,5 +1,5 @@
 package model.world;
 
 public enum Direction {
-	RIGTH , LEFT , UP ,DOWN
+	RIGHT , LEFT , UP ,DOWN
 }
