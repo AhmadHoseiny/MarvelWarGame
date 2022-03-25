@@ -1,12 +1,10 @@
 package engine;
 import java.awt.Point ;
 import java.util.ArrayList ;
-import model.world.Champion ;
 import java.util.HashSet ;
 import model.world.* ;
 import model.abilities.* ;
 import model.effects.* ;
-
 import java.io.* ;
 public class Game {
 	private Player firstPlayer ;
@@ -14,11 +12,11 @@ public class Game {
 	private boolean firstLeaderAbilityUsed ;
 	private boolean secondLeaderAbilityUsed ;
 	private Object [][] board ;
-	private static ArrayList<Champion> availableChampions ;
-	private static ArrayList<Ability> availableAbilities ;
+	private static ArrayList<Champion> availableChampions = new ArrayList<Champion>()  ;
+	private static ArrayList<Ability> availableAbilities = new ArrayList<Ability>() ;
 	private PriorityQueue turnOrder ;
-	private static int boardWidth ;
-	private static int boardHeight ;
+	private static int boardWidth =5 ;
+	private static int boardHeight =5;
 	
 	public Player getFirstPlayer() {
 		return firstPlayer;
@@ -53,6 +51,7 @@ public class Game {
 	public Game(Player first , Player second){
 		this.firstPlayer = first ;
 		this.secondPlayer = second ;
+		board = new Object [boardHeight][boardWidth] ;
 	}
 	
 	private void placeChampions(){
@@ -72,13 +71,14 @@ public class Game {
 		HashSet<Point> previous = new HashSet<Point> ();
 		previous.add(p) ;
 		for(int k=0 ; k<5 ; k++){
-			while( (i==0 && j==0) || (i==0 && j==4) || (i==4 && j==0) || (i==4 && j==4) || 
-					previous.contains(p)) {
+			while(  previous.contains(p) ) {
 				 i = (int)( Math.random() *5  )  ;
 				 j = (int)( Math.random() *5  )  ;
 			}
 			Point x = new Point(i,j) ;
 			previous.add(x) ;
+			Cover newCover = new Cover(i,j) ;
+			board[i][j] = newCover ;
 		}
 	}
 	
@@ -101,7 +101,7 @@ public class Game {
 			int p3 = Integer.parseInt(arr[4]);
 			int p4 = Integer.parseInt(arr[3]);
 			String x = arr[5] ;
-			AreaOfEffect p5 = null ;
+			AreaOfEffect p5  = null;
 			switch(x){
 				case "SELFTARGET" : p5 = AreaOfEffect.SELFTARGET ; break;
 				case "SINGLETARGET" : p5 = AreaOfEffect.SINGLETARGET ;break;
@@ -114,8 +114,8 @@ public class Game {
 			int p6 = Integer.parseInt(arr[6]);
 			if(isDMG){
 				int p7 = Integer.parseInt(arr[7]);
-				DamagingAbility da = new DamagingAbility(p1,p2,p3,p4,p5,p6,p7 ) ;
-				availableAbilities.add(da) ;
+				DamagingAbility dA = new DamagingAbility(p1,p2,p3,p4,p5,p6,p7 ) ;
+				availableAbilities.add(dA)  ;
 			}
 			else{
 				if(isCC){
@@ -177,8 +177,8 @@ public class Game {
 			int p6 = Integer.parseInt(arr[6]) ;
 			int p7 = Integer.parseInt(arr[7]) ;
 			Ability p8 = getAbilityFromName(arr[8]);
-			Ability p9 = getAbilityFromName(arr[8]);
-			Ability p10 = getAbilityFromName(arr[8]);
+			Ability p9 = getAbilityFromName(arr[9]);
+			Ability p10 = getAbilityFromName(arr[10]);
 			
 			if(isH){
 				Hero h = new Hero(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10) ;
@@ -197,7 +197,12 @@ public class Game {
 		}
 	}
 	
-	
+	/*public static void main(String[] args) throws Exception {
+		loadAbilities("Abilities.csv") ;
+		loadChampions("Champions.csv") ;
+		//System.out.println(availableAbilities);
+		System.out.println(availableChampions);
+	}*/
 	
 	
 	

@@ -12,9 +12,9 @@ public class CrowdControlAbility extends Ability{
 	public Effect getEffect() {
 		return effect;
 	}
-	public String toString() {
+	/*public String toString() {
 		return super.toString()+'\n'+effect.toString()+'\n'+
 				"________________________"+'\n';
-	}
+	}*/
 	
 }

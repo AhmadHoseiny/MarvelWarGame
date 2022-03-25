@@ -11,12 +11,12 @@ public class Ability {
 	private AreaOfEffect castArea;
 	
 	public Ability(String name,int cost,int baseCooldown,int castRange,AreaOfEffect area,int required) {
-		this.baseCooldown = baseCooldown;
-		this.castArea = area;
-		this.castRange = castRange;
-		manaCost = cost;
 		this.name = name;
-		requiredActionPoints = required;
+		this.manaCost = cost;
+		this.baseCooldown = baseCooldown;
+		this.castRange = castRange;
+		this.castArea = area;
+		this.requiredActionPoints = required;
 	}
 
 	public int getCurrentCooldown() {
@@ -50,7 +50,7 @@ public class Ability {
 	public AreaOfEffect getCastArea() {
 		return castArea;
 	}
-	public String toString() {
+	/*public String toString() {
 		return "NAME: "+name+'\n'+"MANA COST: "+manaCost+'\n'+
 				"BASE COOLDOWN: "+baseCooldown+'\n'+
 				"CURRENT COOLDOWN: "+currentCooldown+'\n'+
@@ -60,6 +60,6 @@ public class Ability {
 				
 				
 				
-	}
+	}*/
 	
 }

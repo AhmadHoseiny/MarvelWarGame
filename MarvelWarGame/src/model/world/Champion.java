@@ -27,6 +27,8 @@ public class Champion {
 		this.attackRange = attackRange ;
 		this.attackDamage = attackDamage ;
 		this.condition = Condition.ACTIVE ;
+		this.abilities = new ArrayList<Ability>();
+		this.appliedEffects = new ArrayList<Effect>() ;
 	}
 	public Champion (String name, int maxHP, int mana, int maxActions, int speed,
 			int attackRange,int attackDamage , Ability a1 , Ability a2 , Ability a3 ){
@@ -38,6 +40,8 @@ public class Champion {
 		this.attackRange = attackRange ;
 		this.attackDamage = attackDamage ;
 		this.condition = Condition.ACTIVE ;
+		this.abilities = new ArrayList<Ability>();
+		this.appliedEffects = new ArrayList<Effect>() ;
 		this.abilities.add(a1);
 		this.abilities.add(a2);
 		this.abilities.add(a3);
@@ -118,17 +122,14 @@ public class Champion {
 			res += abilities.get(i)+" ";
 		return res;
 	}
-	public String toString() {
-		return "NAME: "+name+'\n'+"MAX HP: "+maxHP+'\n'+"CURRENT HP: "+currentHP+
+	/*public String toString() {
+		return "NAME: "+name+'\n'+"MAX HP: "+maxHP+'\n'+
 				'\n'+ "MANA: "+mana+'\n'+"Max Action Points Per Turn: "+
-				maxActionPointsPerTurn+'\n'+"Current Action Points: "+
-				currentActionPoints+'\n'+"Attack Range: "+attackRange+'\n'+
+				maxActionPointsPerTurn+'\n'+"Attack Range: "+attackRange+'\n'+
 				"Attack Damage: "+attackDamage+'\n'+"SPEED: "+speed+'\n'+
-				"Abilities :"+printAbilities(abilities)+'\n'+
-				"EFFECTS: "+printEffects(appliedEffects)+'\n'+
-				"CONDITION: "+condition+'\n'+
-				"LOCATION: "+location+'\n'+"___________________________"+'\n';
+				"Abilities :"+abilities.toString()+'\n'+
+				"________________________________________________"+'\n';
 				
-	}
+	}*/
 	
 }

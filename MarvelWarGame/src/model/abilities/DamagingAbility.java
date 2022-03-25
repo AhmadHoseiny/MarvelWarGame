@@ -16,9 +16,9 @@ public class DamagingAbility extends Ability {
 	public void setDamageAmount(int damageAmount) {
 		this.damageAmount = damageAmount;
 	}
-	public String toString() {
+	/*public String toString() {
 		return super.toString()+'\n'+"DAMAGE AMOUNT: "+damageAmount+'\n'+
 				"________________________"+'\n';
-	}
+	}*/
 	
 }
