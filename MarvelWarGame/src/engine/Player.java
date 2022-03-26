@@ -13,8 +13,9 @@ public class Player {
 	public Champion getLeader() {
 		return leader;
 	}
+	
 	public void setLeader(Champion leader) {
-		leader = leader;
+		this.leader = leader;
 	}
 	public String getName() {
 		return name;

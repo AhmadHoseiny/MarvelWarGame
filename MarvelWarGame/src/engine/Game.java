@@ -54,8 +54,8 @@ public class Game {
 		this.firstPlayer = first ;
 		this.secondPlayer = second ;
 		board = new Object [BOARDHEIGHT][BOARDWIDTH] ;
-		//placeCovers() ;
-		//placeChampions() ;
+		placeCovers() ;
+		placeChampions() ;
 	}
 	
 	private void placeChampions(){
@@ -89,8 +89,9 @@ public class Game {
 		}
 	}
 	
-	public static void loadAbilities(String filePath) throws Exception{
+	public static void loadAbilities(String filePath) throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(filePath)) ;
+		//String temp = "" ;
 		while(br.ready()){
 			String temp = br.readLine() ;
 			String [] arr = temp.split(",") ;
@@ -152,6 +153,8 @@ public class Game {
 				}
 			}
 		}
+		availableAbilities.trimToSize();
+		br.close();
 	}
 	
 	public static Ability getAbilityFromName(String name){
@@ -162,7 +165,7 @@ public class Game {
 		}
 		return null ;
 	}
-	public static void loadChampions(String filePath) throws Exception{
+	public static void loadChampions(String filePath) throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(filePath)) ;
 		while(br.ready()){
 			String tmp = br.readLine();
@@ -202,6 +205,8 @@ public class Game {
 				}
 			}
 		}
+		availableChampions.trimToSize();
+		br.close();
 	}
 	
 	/*public static void main(String[] args) throws Exception {
