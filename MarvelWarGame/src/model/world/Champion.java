@@ -30,8 +30,8 @@ public class Champion {
 		this.condition = Condition.ACTIVE ;
 		this.abilities = new ArrayList<Ability>();
 		this.appliedEffects = new ArrayList<Effect>() ;
-		//this.currentActionPoints=maxActions ;
-		//this.currentHP = maxHP ;
+		this.currentActionPoints=maxActions ;
+		this.currentHP = maxHP ;
 	}
 	public Champion (String name, int maxHP, int mana, int maxActions, int speed,
 			int attackRange,int attackDamage , Ability a1 , Ability a2 , Ability a3 ){
@@ -45,6 +45,8 @@ public class Champion {
 		this.condition = Condition.ACTIVE ;
 		this.abilities = new ArrayList<Ability>();
 		this.appliedEffects = new ArrayList<Effect>() ;
+		this.currentActionPoints=maxActions ;
+		this.currentHP = maxHP ;
 		this.abilities.add(a1);
 		this.abilities.add(a2);
 		this.abilities.add(a3);
