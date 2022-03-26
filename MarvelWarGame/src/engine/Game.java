@@ -12,8 +12,8 @@ public class Game {
 	private boolean firstLeaderAbilityUsed ;
 	private boolean secondLeaderAbilityUsed ;
 	private Object [][] board ;
-	private static ArrayList<Champion> availableChampions = new ArrayList<Champion>()  ;
-	private static ArrayList<Ability> availableAbilities = new ArrayList<Ability>() ;
+	private static ArrayList<Champion> availableChampions /*= new ArrayList<Champion>() */ ;
+	private static ArrayList<Ability> availableAbilities /*= new ArrayList<Ability>()*/ ;
 	private PriorityQueue turnOrder ;
 	private final static int BOARDWIDTH =5 ;
 	private final static int BOARDHEIGHT =5;
@@ -55,6 +55,8 @@ public class Game {
 		this.secondPlayer = second ;
 		this.turnOrder = new PriorityQueue(6) ;
 		board = new Object [BOARDHEIGHT][BOARDWIDTH] ;
+		this.availableAbilities = new ArrayList<Ability>() ;
+		this.availableChampions = new ArrayList<Champion>() ;
 		placeCovers() ;
 		placeChampions() ;
 	}
@@ -63,10 +65,14 @@ public class Game {
 		ArrayList<Champion> teamOfP1 = firstPlayer.getTeam() ;
 		ArrayList<Champion> teamOfP2 = secondPlayer.getTeam() ;
 		for(int i=0 ; i<teamOfP1.size() ; i++){
-			board[0][i+1] = teamOfP1.get(i) ;
+			Champion cur = teamOfP1.get(i) ;
+			cur.setLocation(new Point(0 , i+1));
+			board[0][i+1] = cur ;
 		}
 		for(int i=0 ; i<teamOfP2.size() ; i++){
-			board[4][i+1] = teamOfP2.get(i) ;
+			Champion cur = teamOfP2.get(i) ;
+			cur.setLocation(new Point(4 , i+1));
+			board[4][i+1] = cur ;
 		}
 	}
 	private void placeCovers(){
@@ -93,7 +99,7 @@ public class Game {
 	public static void loadAbilities(String filePath) throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(filePath)) ;
 		//String temp = "" ;
-		while(br.ready()){
+		while(br.ready() /*&& availableAbilities.size()<46*/){
 			String temp = br.readLine() ;
 			String [] arr = temp.split(",") ;
 			boolean isCC =false ;
@@ -186,7 +192,7 @@ public class Game {
 	}
 	public static void loadChampions(String filePath) throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(filePath)) ;
-		while(br.ready()){
+		while(br.ready() /*&& availableChampions.size()<16*/){
 			String tmp = br.readLine();
 			String[] arr = tmp.split(",") ;
 			boolean isH =false ;
