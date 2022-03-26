@@ -54,8 +54,7 @@ public class Champion {
 		return currentHP;
 	}
 	public void setCurrentHP(int currentHP) {
-		if(currentHP>=0  /*&& currentHP<=maxHP*/)
-			this.currentHP = currentHP;
+			this.currentHP = Math.max(0, Math.min(currentHP, getMaxHP()));
 	}
 	public int getMaxActionPointsPerTurn() {
 		return maxActionPointsPerTurn;

@@ -1,3 +1,4 @@
+
 package model.effects;
 
 public class Dodge extends Effect{
