@@ -128,7 +128,7 @@ public class Game {
 			else{
 				if(isCC){
 					String name = arr[7];
-					EffectType y = null ;
+					/*EffectType y = null ;
 					switch(name){
 						case "Disarm" : y = EffectType.DEBUFF ;break;
 						case "PowerUp" : y = EffectType.BUFF ;break;
@@ -142,7 +142,22 @@ public class Game {
 						case "Stun" : y = EffectType.DEBUFF ;break;
 						default: break ;
 					}
-					Effect c = new Effect(name , Integer.parseInt(arr[8]) , y) ; 
+					Effect c = new Effect(name , Integer.parseInt(arr[8]) , y) ; */ 
+					Effect c = null ; 
+					int d = Integer.parseInt(arr[8]) ;
+					switch(name){
+						case "Disarm" : c = new Disarm(d) ; break ;
+						case "PowerUp" : c = new PowerUp(d) ; break ;
+						case "Shield" : c = new Shield(d) ; break ;
+						case "Silence" : c = new Silence(d) ; break ;
+						case "SpeedUp" : c = new SpeedUp(d) ; break ;
+						case "Embrace" : c = new Embrace(d) ; break ;
+						case "Root" : c = new Root(d) ; break ;
+						case "Shock" : c = new Shock(d) ; break ;
+						case "Dodge" : c = new Dodge(d) ; break ;
+						case "Stun" : c = new Stun(d) ;break ; 
+						default : break ;
+					}
 					CrowdControlAbility cca = new CrowdControlAbility(p1,p2,p3,p4,p5,p6,c) ;
 					availableAbilities.add(cca) ;
 				}
