@@ -53,7 +53,7 @@ public class Game {
 	public Game(Player first , Player second){
 		this.firstPlayer = first ;
 		this.secondPlayer = second ;
-		//this.turnOrder = new PriorityQueue(6) ;
+		this.turnOrder = new PriorityQueue(6) ;
 		board = new Object [BOARDHEIGHT][BOARDWIDTH] ;
 		placeCovers() ;
 		placeChampions() ;
