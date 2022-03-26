@@ -147,9 +147,12 @@ public class Game {
 					availableAbilities.add(cca) ;
 				}
 				else{
-					int p7 = Integer.parseInt(arr[7]) ;
-					HealingAbility ha = new HealingAbility(p1,p2,p3,p4,p5,p6,p7) ;
-					availableAbilities.add(ha) ;
+					if(isHEL){
+						int p7 = Integer.parseInt(arr[7]) ;
+						HealingAbility ha = new HealingAbility(p1,p2,p3,p4,p5,p6,p7) ;
+						availableAbilities.add(ha) ;
+					}
+					
 				}
 			}
 		}
@@ -200,8 +203,11 @@ public class Game {
 					availableChampions.add(A) ;
 				}
 				else{
-					Villain v = new Villain(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10) ;
-					availableChampions.add(v) ;
+					if(isV){
+						Villain v = new Villain(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10) ;
+						availableChampions.add(v) ;
+					}
+					
 				}
 			}
 		}
