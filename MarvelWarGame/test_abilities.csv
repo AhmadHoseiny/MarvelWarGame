@@ -1,3 +1,3 @@
-DMG,Shield throw,34,31,3,DIRECTIONAL,20,11,
-HEL,I can do this all day,31,7,7,SINGLETARGET,32,5,
-CC,Shield Up,17,9,13,TEAMTARGET,26,Shield,19
+DMG,Shield throw,41,40,22,SINGLETARGET,28,18,
+HEL,I can do this all day,3,1,23,SINGLETARGET,31,0,
+CC,Shield Up,11,42,42,TEAMTARGET,33,Shield,18
